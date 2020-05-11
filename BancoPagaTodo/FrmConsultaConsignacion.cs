@@ -107,6 +107,13 @@ namespace BancoPagaTodo
                 DtgConsultaConsignacion.DataSource = service.ConsultarGasCaribeFecha(fecha);
                 TxtValorTotalGasCaribe.Text = service.ConsultarGasCaribeFecha(fecha).Sum(c => c.ValorPagado).ToString();
                 TxtTotalGasCaribe.Text = service.ConsultarGasCaribeFecha(fecha).Count().ToString();
+                TxtValorTotalConsignaciones.Text = "";
+                TxtValorTotalElectricaribe.Text = "";
+                TxtValorTotalEmdupar.Text = "";
+                TxtTotalConsignaciones.Text = "";
+                TxtTotalElectricaribe.Text = "";
+                TxtTotalEmdupar.Text = "";
+
             }
 
             if (CmbTipoServicio.Text.Equals("EmduparFecha"))
@@ -116,10 +123,28 @@ namespace BancoPagaTodo
                 DtgConsultaConsignacion.DataSource = service.ConsultarEmdupar(fecha);
                 TxtValorTotalEmdupar.Text = service.ConsultarEmdupar(fecha).Sum(c => c.ValorPagado).ToString();
                 TxtTotalEmdupar.Text = service.ConsultarEmdupar(fecha).Count().ToString();
+                TxtTotalConsignaciones.Text = "";
+                TxtTotalElectricaribe.Text = "";
+                TxtTotalGasCaribe.Text = "";
+                TxtValorTotalConsignaciones.Text = "";
+                TxtValorTotalElectricaribe.Text = "";
+                TxtValorTotalGasCaribe.Text = "";
+            }
+            if (CmbTipoServicio.Text.Equals("ElectricaribeFecha"))
+            {
+                DtgConsultaConsignacion.DataSource = null;
+                DateTime fecha = DtpFechaFiltro.Value.Date;
+                DtgConsultaConsignacion.DataSource = service.ConsultarElectricaribeFecha(fecha);
+                TxtValorTotalElectricaribe.Text = service.ConsultarElectricaribeFecha(fecha).Sum(c => c.ValorPagado).ToString();
+                TxtTotalElectricaribe.Text = service.ConsultarElectricaribeFecha(fecha).Count().ToString();
+                TxtTotalGasCaribe.Text = "";
+                TxtValorTotalConsignaciones.Text = "";
+                TxtValorTotalEmdupar.Text = "";
+                TxtValorTotalGasCaribe.Text = "";
+                TxtTotalConsignaciones.Text = "";
+                TxtTotalEmdupar.Text = "";
             }
 
-           
-            //ElectricaribeFecha
         }
     }
 }
