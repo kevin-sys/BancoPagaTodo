@@ -74,7 +74,7 @@ namespace DAL
 
         }
 
-        public IEnumerable<Consignacion> Electricaribe()
+        public IEnumerable<Consignacion> ListarElectricaribe()
         {
             return consignaciones.Where(c => c.EntidadServicios.Equals("Electricaribe"));
 

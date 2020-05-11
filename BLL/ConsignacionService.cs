@@ -19,7 +19,7 @@ namespace BLL
         {
             try
             {
-                if (repository.Buscar(consignacion.NumeroRecibo)==null)
+                if (repository.Buscar(consignacion.NumeroRecibo) == null)
                 {
                     repository.Guardar(consignacion);
                     return "Los Datos han sido guardados satisfactoriamente";
@@ -35,8 +35,66 @@ namespace BLL
             {
 
                 return "Error de Datos: " + e.Message;
-                
+
             }
         }
+
+        public static IEnumerable<Consignacion> ListarGasCaribe()
+        {
+            return repository.ListarGasCaribe();
+        }
+
+        public static IEnumerable<Consignacion> ListarEmdupar()
+        {
+            return repository.ListarEmdupar();
+        }
+
+        public static IEnumerable<Consignacion> ListarElectricaribe()
+        {
+            return repository.ListarElectricaribe();
+        }
+
+        public int TotalizarGasCaribe()
+        {
+            return repository.TotalizarGasCaribe();
+        }
+
+        public int TotalizarEmdupar()
+        {
+            return repository.TotalizarEmdupar();
+        }
+
+        public int TotalizarElectricaribe()
+        {
+            return repository.TotalizarElectricaribe();
+        }
+
+        public int TotalizarTodos()
+        {
+            return repository.TotalizarTodos();
+        }
+
+        public double ValorTotalGasCaribe()
+        {
+            return repository.ValorTotalGasCaribe();
+        }
+
+        public double ValorTotalEmdupar()
+        {
+            return repository.ValorTotalEmdupar();
+        }
+
+        public double ValorTotalElectricaribe()
+        {
+            return repository.ValorTotalElectricaribe();
+        }
+
+        public double ValorTotalconsignaciones()
+        {
+            return repository.ValorTotalconsignaciones();
+        }
+
     }
 }
+
+
