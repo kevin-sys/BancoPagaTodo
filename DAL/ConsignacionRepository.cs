@@ -118,6 +118,7 @@ namespace DAL
         public double ValorTotalconsignaciones()
         {
             return consignaciones.Sum(c => c.ValorPagado);
+
         }
     }
 }
