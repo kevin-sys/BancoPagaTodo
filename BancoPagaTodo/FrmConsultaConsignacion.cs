@@ -49,7 +49,48 @@ namespace BancoPagaTodo
                 TxtValorTotalEmdupar.Text = service.ValorTotalEmdupar().ToString();
                 TxtValorTotalGasCaribe.Text = service.ValorTotalGasCaribe().ToString();
 
+            }
+            if (CmbTipoServicio.Text.Equals("Emdupar"))
+            {
+                DtgConsultaConsignacion.DataSource = null;
+                DtgConsultaConsignacion.DataSource = ConsignacionService.ListarEmdupar().ToList();
+                TxtTotalEmdupar.Text = service.TotalizarEmdupar().ToString();
+                TxtValorTotalEmdupar.Text = service.ValorTotalEmdupar().ToString();
+                TxtTotalConsignaciones.Text = "";
+                TxtTotalElectricaribe.Text = "";
+                TxtTotalGasCaribe.Text = "";
+                TxtValorTotalConsignaciones.Text = "";
+                TxtValorTotalElectricaribe.Text = "";
+                TxtValorTotalGasCaribe.Text = "";
+            }
+            if (CmbTipoServicio.Text.Equals("GasCaribe"))
+            {
+                DtgConsultaConsignacion.DataSource = null;
 
+                DtgConsultaConsignacion.DataSource = ConsignacionService.ListarGasCaribe().ToList();
+
+                TxtTotalConsignaciones.Text = "";
+                TxtTotalElectricaribe.Text = "";
+                TxtTotalEmdupar.Text = "";
+                TxtTotalGasCaribe.Text = service.TotalizarGasCaribe().ToString();
+                TxtValorTotalConsignaciones.Text = "";
+                TxtValorTotalElectricaribe.Text = "";
+                TxtValorTotalEmdupar.Text = "";
+                TxtValorTotalGasCaribe.Text = service.ValorTotalGasCaribe().ToString();
+            }
+            if (CmbTipoServicio.Text.Equals("Electricaribe"))
+            {
+                DtgConsultaConsignacion.DataSource = null;
+                DtgConsultaConsignacion.DataSource = ConsignacionService.ListarElectricaribe().ToList();
+
+                TxtTotalConsignaciones.Text = "";
+                TxtTotalElectricaribe.Text = service.TotalizarElectricaribe().ToString();
+                TxtTotalEmdupar.Text = "";
+                TxtTotalGasCaribe.Text = "";
+                TxtValorTotalConsignaciones.Text = "";
+                TxtValorTotalElectricaribe.Text = service.ValorTotalElectricaribe().ToString();
+                TxtValorTotalEmdupar.Text = "";
+                TxtValorTotalGasCaribe.Text = "";
             }
         }
     }
