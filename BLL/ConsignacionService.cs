@@ -39,6 +39,11 @@ namespace BLL
             }
         }
 
+        public static IList<Consignacion> ConsultarTodos()
+        {
+            return repository.Consultar();
+        }
+
         public static IEnumerable<Consignacion> ListarGasCaribe()
         {
             return repository.ListarGasCaribe();

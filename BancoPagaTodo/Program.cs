@@ -16,7 +16,7 @@ namespace BancoPagaTodo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmRegistroConsignacion());
+            Application.Run(new FrmConsultaConsignacion());
         }
     }
 }

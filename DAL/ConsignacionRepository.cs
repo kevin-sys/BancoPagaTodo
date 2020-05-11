@@ -31,9 +31,10 @@ namespace DAL
             FileStream fileStream = new FileStream(ruta, FileMode.OpenOrCreate);
             StreamReader streamReader = new StreamReader(fileStream);
             string linea = string.Empty;
-            Consignacion consignacion = new Consignacion();
+            
             while ((linea = streamReader.ReadLine()) != null)
             {
+                Consignacion consignacion = new Consignacion();
                 string[] datos = linea.Split(';');
                 consignacion.EntidadServicios = datos[0];
                 consignacion.NumeroRecibo = datos[1];
