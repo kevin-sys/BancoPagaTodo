@@ -47,6 +47,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.TxtValorTotalConsignaciones = new System.Windows.Forms.TextBox();
+            this.DtpFechaFiltro = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.DtgConsultaConsignacion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,7 +76,11 @@
             "Todos",
             "GasCaribe",
             "Emdupar",
-            "Electricaribe"});
+            "Electricaribe",
+            "TodosFecha",
+            "GasCaribeFecha",
+            "EmduparFecha",
+            "ElectricaribeFecha"});
             this.CmbTipoServicio.Location = new System.Drawing.Point(115, 233);
             this.CmbTipoServicio.Name = "CmbTipoServicio";
             this.CmbTipoServicio.Size = new System.Drawing.Size(121, 21);
@@ -209,11 +214,19 @@
             this.TxtValorTotalConsignaciones.Size = new System.Drawing.Size(100, 20);
             this.TxtValorTotalConsignaciones.TabIndex = 17;
             // 
+            // DtpFechaFiltro
+            // 
+            this.DtpFechaFiltro.Location = new System.Drawing.Point(376, 236);
+            this.DtpFechaFiltro.Name = "DtpFechaFiltro";
+            this.DtpFechaFiltro.Size = new System.Drawing.Size(200, 20);
+            this.DtpFechaFiltro.TabIndex = 19;
+            // 
             // FrmConsultaConsignacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DtpFechaFiltro);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.TxtValorTotalConsignaciones);
             this.Controls.Add(this.label7);
@@ -263,5 +276,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox TxtValorTotalConsignaciones;
+        private System.Windows.Forms.DateTimePicker DtpFechaFiltro;
     }
 }

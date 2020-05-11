@@ -99,6 +99,26 @@ namespace BLL
             return repository.ValorTotalconsignaciones();
         }
 
+        public IList<Consignacion> ConsultarTodosFecha(DateTime fecha)
+        {
+            return repository.ConsultarTodosFecha(fecha);
+        }
+
+        public IList<Consignacion> ConsultarElectricaribeFecha(DateTime fecha)
+        {
+            return repository.ConsultarElectricaribe(fecha);
+        }
+
+        public IList<Consignacion> ConsultarGasCaribeFecha(DateTime fecha)
+        {
+            return repository.ConsultarGasCaribeFecha(fecha);
+        }
+
+        public IList<Consignacion> ConsultarEmdupar(DateTime fecha)
+        {
+            return repository.ConsultarEmdupar(fecha);
+        }
+
     }
 }
 

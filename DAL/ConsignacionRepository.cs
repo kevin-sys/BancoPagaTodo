@@ -121,5 +121,27 @@ namespace DAL
             return consignaciones.Sum(c => c.ValorPagado);
 
         }
+        public IList<Consignacion> ConsultarTodosFecha(DateTime fecha)
+        {
+            return consignaciones.Where(c => c.FechaPago.Year.Equals(fecha.Year) && c.FechaPago.Month.Equals(fecha.Month)).ToList();
+        }
+
+        public IList<Consignacion> ConsultarGasCaribeFecha(DateTime fecha)
+        {
+
+            return consignaciones.Where(c => c.EntidadServicios == "GasCaribe").Where(c => c.FechaPago.Year.Equals(fecha.Year) && c.FechaPago.Month.Equals(fecha.Month)).ToList();
+        }
+
+        public IList<Consignacion> ConsultarEmdupar(DateTime fecha)
+        {
+
+            return consignaciones.Where(c => c.EntidadServicios == "Emdupar").Where(c => c.FechaPago.Year.Equals(fecha.Year) && c.FechaPago.Month.Equals(fecha.Month)).ToList();
+        }
+
+        public IList<Consignacion> ConsultarElectricaribe(DateTime fecha)
+        {
+
+            return consignaciones.Where(c => c.EntidadServicios == "Electricaribe").Where(c => c.FechaPago.Year.Equals(fecha.Year) && c.FechaPago.Month.Equals(fecha.Month)).ToList();
+        }
     }
 }

@@ -92,6 +92,34 @@ namespace BancoPagaTodo
                 TxtValorTotalEmdupar.Text = "";
                 TxtValorTotalGasCaribe.Text = "";
             }
+            if (CmbTipoServicio.Text.Equals("TodosFecha"))
+            {
+                DtgConsultaConsignacion.DataSource = null;
+                DateTime fecha = DtpFechaFiltro.Value.Date;
+                DtgConsultaConsignacion.DataSource = service.ConsultarTodosFecha(fecha);
+                TxtValorTotalConsignaciones.Text = service.ConsultarTodosFecha(fecha).Sum(c => c.ValorPagado).ToString();
+                TxtTotalConsignaciones.Text = service.ConsultarTodosFecha(fecha).Count().ToString();
+            }
+            if (CmbTipoServicio.Text.Equals("GasCaribeFecha"))
+            {
+                DtgConsultaConsignacion.DataSource = null;
+                DateTime fecha = DtpFechaFiltro.Value.Date;
+                DtgConsultaConsignacion.DataSource = service.ConsultarGasCaribeFecha(fecha);
+                TxtValorTotalGasCaribe.Text = service.ConsultarGasCaribeFecha(fecha).Sum(c => c.ValorPagado).ToString();
+                TxtTotalGasCaribe.Text = service.ConsultarGasCaribeFecha(fecha).Count().ToString();
+            }
+
+            if (CmbTipoServicio.Text.Equals("EmduparFecha"))
+            {
+                DtgConsultaConsignacion.DataSource = null;
+                DateTime fecha = DtpFechaFiltro.Value.Date;
+                DtgConsultaConsignacion.DataSource = service.ConsultarEmdupar(fecha);
+                TxtValorTotalEmdupar.Text = service.ConsultarEmdupar(fecha).Sum(c => c.ValorPagado).ToString();
+                TxtTotalEmdupar.Text = service.ConsultarEmdupar(fecha).Count().ToString();
+            }
+
+           
+            //ElectricaribeFecha
         }
     }
 }
